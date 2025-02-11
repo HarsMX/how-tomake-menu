@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+header{
+    background-color: rgb(201, 196, 196);
+    display: flex;
+    justify-content: space-between;
+}
+header .logo{
+    width: 50px;
+    height: 50px;
+    padding: 15px 16px;
+    border-radius: 60px;
+}
+header ul{
+    list-style-type:none ;
+    display: flex;
+    padding: 0;
+}
+li{
+    padding-right: 4px;
+}
+li img{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.gambarIcon{
+    transition: transform 0.3 ease-in-out;
+}
+.gambarIcon:hover{
+    transform: scale(1.2);
+}
+.menuToggle{
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+@keyframes fadeSlide {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgb(201, 196, 196);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 7%; /* Dibuat lebih lebar agar lebih pas */
+        border-radius: 5px;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .menu li {
+        padding: 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        animation: fadeSlide 0.3s ease-in-out; /* Ini yang diperbaiki */
+    }
+}
